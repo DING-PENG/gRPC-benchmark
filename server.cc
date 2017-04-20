@@ -24,8 +24,6 @@ class BenchmarkImpl final : public benchmark::Benchmark::Service {
 };
 
 void RunServer() {
-    for (uint64_t i = 0; i < 1024 * 1024; i++)
-        str[i] = '0';
     std::string server_address("0.0.0.0:50051");
     BenchmarkImpl service;
 
@@ -39,6 +37,8 @@ void RunServer() {
 }
 
 int main(int argc, char** argv) {
+    for (uint64_t i = 0; i < 1024 * 1024; i++)
+        str[i] = '0';
     RunServer();
     return 0;
 }
