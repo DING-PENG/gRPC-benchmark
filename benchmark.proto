@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package benchmark;
+
+service Benchmark {
+    rpc GetData(Data) returns (Data) {};
+}
+
+message Data {
+    required bytes val = 1;
+}
